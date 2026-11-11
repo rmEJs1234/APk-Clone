@@ -11,6 +11,9 @@ class AppsTouchCallBack(private val onMoveBlock: (from: Int, to: Int) -> Unit) :
         private const val TAG = "AppsTouchCallBack"
     }
 
+    // 길게 누르면 드래그(순서 이동) 대신 메뉴(바로가기 만들기 등)가 뜨도록 한다
+    override fun isLongPressDragEnabled(): Boolean = false
+
     override fun getMovementFlags(
         recyclerView: RecyclerView,
         viewHolder: RecyclerView.ViewHolder
